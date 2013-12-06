@@ -1,0 +1,10 @@
+P:\1dv437\BeforeLecturesHT13\MinimalGame\MinimalGame\MinimalGame\bin\x86\Debug\MinimalGame.exe
+P:\1dv437\BeforeLecturesHT13\MinimalGame\MinimalGame\MinimalGame\bin\x86\Debug\MinimalGame.pdb
+P:\1dv437\BeforeLecturesHT13\MinimalGame\MinimalGame\MinimalGame\obj\x86\Debug\ResolveAssemblyReference.cache
+P:\1dv437\BeforeLecturesHT13\MinimalGame\MinimalGame\MinimalGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+P:\1dv437\BeforeLecturesHT13\MinimalGame\MinimalGame\MinimalGame\obj\x86\Debug\MinimalGame.exe
+P:\1dv437\BeforeLecturesHT13\MinimalGame\MinimalGame\MinimalGame\obj\x86\Debug\MinimalGame.pdb
+P:\1dv437\BeforeLecturesHT13\MinimalGame\MinimalGame\MinimalGame\bin\x86\Debug\Content\bubbles.xnb
+P:\1dv437\BeforeLecturesHT13\MinimalGame\MinimalGame\MinimalGame\bin\x86\Debug\Content\glitter.xnb
+P:\1dv437\BeforeLecturesHT13\MinimalGame\MinimalGame\MinimalGame\bin\x86\Debug\Content\pad.xnb
+P:\1dv437\BeforeLecturesHT13\MinimalGame\MinimalGame\MinimalGame\bin\x86\Debug\Content\level.xnb
