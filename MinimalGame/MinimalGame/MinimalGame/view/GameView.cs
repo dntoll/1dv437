@@ -57,7 +57,11 @@ namespace MinimalGame.view
                 {
                     Vector2 brickCenterTop = new Vector2(0.5f + x, y);
                     Rectangle brickViewRect = camera.translateRectFromCenterTop(brickCenterTop, 0.5f);
-                    spriteBatch.Draw(levelTexture, brickViewRect, Color.White);
+
+                    if (model.getLevel().hasTile(x, y))
+                    {
+                        spriteBatch.Draw(levelTexture, brickViewRect, Color.White);
+                    }
                 }
             }
 

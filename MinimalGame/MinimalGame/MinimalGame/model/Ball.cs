@@ -41,43 +41,19 @@ namespace MinimalGame.model
             return 0.5f;
         }
 
-        /*internal void CollideRight()
-        {
-            if (this.ballVelocity.X > 0)
-            {
-                this.ballVelocity.X = -this.ballVelocity.X;
-            }
-        }
-
-        internal void CollideLeft()
-        {
-            if (this.ballVelocity.X < 0)
-            {
-                this.ballVelocity.X = -this.ballVelocity.X;
-            }
-        }
-
-        internal void CollideBottom()
-        {
-            if (this.ballVelocity.Y > 0)
-            {
-                this.ballVelocity.Y = -this.ballVelocity.Y;
-            }
-        }
-
-        internal void CollideTop()
-        {
-            if (this.ballVelocity.Y < 0)
-            {
-                this.ballVelocity.Y = -this.ballVelocity.Y;
-            }
-        }*/
+       
 
         internal void Collide(Vector2 normal)
         {
+            //http://nehe.gamedev.net/tutorial/collision_detection/17005/
             Vector2 R = 2.0f * (-Vector2.Dot(ballVelocity, normal)) * normal + ballVelocity;
 
             this.ballVelocity = R;
+        }
+
+        internal float GetYSpeed()
+        {
+            return ballVelocity.Y;
         }
     }
 }

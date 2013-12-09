@@ -61,7 +61,7 @@ namespace MinimalGame.model
             padVelocity = 0.0f;
         }
 
-        internal Collision Collide(Vector2 ballposition, float ballRadius)
+        internal Collision Collide(Vector2 ballposition, float ballRadius, float ballSpeedY)
         {
             float ballBottomPosition = ballposition.Y + ballRadius;
 
@@ -71,10 +71,13 @@ namespace MinimalGame.model
                 if (ballposition.X < centerTopPosition.X + GetRadius() &&
                     ballposition.X > centerTopPosition.X - GetRadius())
                 {
-                    Vector2 collisionPosition = new Vector2(ballposition.X, centerTopPosition.Y);
-                    Vector2 normal = new Vector2(0, -1);
+                    if (ballSpeedY > 0)
+                    {
+                        Vector2 collisionPosition = new Vector2(ballposition.X, centerTopPosition.Y);
+                        Vector2 normal = new Vector2(0, -1);
 
-                    return new Collision(collisionPosition, normal);
+                        return new Collision(collisionPosition, normal);
+                    }
                 }
             }
             return null;

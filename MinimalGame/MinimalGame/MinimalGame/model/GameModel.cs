@@ -26,7 +26,25 @@ namespace MinimalGame.model
 
         public void Update(float elapsedTimeSeconds, IModelListener listener)
         {
+            float timeStep = 0.001f;
+            if (elapsedTimeSeconds > 0)
+            {
+                int numIterations = (int)(timeStep / elapsedTimeSeconds);
+
+                for (int i = 0; i < numIterations; i++)
+                {
+                    UpdateInternal(timeStep, listener);
+                }
+
+                float timeLeft = elapsedTimeSeconds - timeStep * numIterations;
+                UpdateInternal(timeLeft, listener);
+            }
+        }
+
+        private void UpdateInternal(float elapsedTimeSeconds, IModelListener listener)
+        {
             thePad.Update(elapsedTimeSeconds, 0, Level.SIZE_X);
+            theBall.Update(elapsedTimeSeconds);
 
             Collision levelCollision = level.Collide(theBall.GetCenter(), theBall.GetRadius());
 
@@ -36,15 +54,13 @@ namespace MinimalGame.model
                 listener.BallWallCollision(levelCollision.GetCollisionPosition(), levelCollision.GetNormal());
             }
 
-            Collision padCollision = thePad.Collide(theBall.GetCenter(), theBall.GetRadius());
+            Collision padCollision = thePad.Collide(theBall.GetCenter(), theBall.GetRadius(), theBall.GetYSpeed());
 
             if (padCollision != null)
             {
                 theBall.Collide(padCollision.GetNormal());
                 listener.BallWallCollision(padCollision.GetCollisionPosition(), padCollision.GetNormal());
             }
-
-            theBall.Update(elapsedTimeSeconds);
         }
 
 
@@ -66,6 +82,11 @@ namespace MinimalGame.model
         internal Pad getPad()
         {
             return thePad;
+        }
+
+        internal Level getLevel()
+        {
+            return level;
         }
     }
 }

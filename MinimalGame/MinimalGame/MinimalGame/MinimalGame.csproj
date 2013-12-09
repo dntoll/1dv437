@@ -112,6 +112,7 @@
     <Compile Include="model\IModelListener.cs" />
     <Compile Include="model\Level.cs" />
     <Compile Include="model\Pad.cs" />
+    <Compile Include="model\Tile.cs" />
     <Compile Include="view\Camera.cs" />
     <Compile Include="view\GameView.cs" />
     <Compile Include="model\GameModel.cs" />
